@@ -6,6 +6,7 @@ table td {
     width: 133px;
     height: 133px;
     border: 2px solid black;
+    position: relative;
 }
 
 table {
@@ -31,4 +32,12 @@ table tr:last-child td {
 table tr td:last-child {
     border-right: 0;
     /*Ränder rechts entfernen*/
+}
+
+.shape {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    top: 26px;
+    left: 26px;
 }
