@@ -9,25 +9,33 @@
     <script src="script.js"></script>
 </head>
 
-<body>
+<body onload="init()">
+
+    <h1>tic tac toe - your best game</h1>
 
     <table>
         <tr>
-            <td><img class="shape" src="./img/circle.png" alt=""><img class="shape" src="./img/cross.png" alt=""></td>
-            <td><img class="shape" src="./img/circle.png" alt=""><img class="shape" src="./img/cross.png" alt=""></td>
-            <td><img class="shape" src="./img/circle.png" alt=""><img class="shape" src="./img/cross.png" alt=""></td>
+            <td onclick="placeMove(0, 0)" id="r0c0"></td>
+            <td onclick="placeMove(0, 1)" id="r0c1"></td>
+            <td onclick="placeMove(0, 2)" id="r0c2"><img class="shape d-none" src="./img/circle.png" alt=""><img class="shape d-none" src="./img/cross.png" alt=""></td>
         </tr>
         <tr>
-            <td><img class="shape" src="./img/circle.png" alt=""><img class="shape" src="./img/cross.png" alt=""></td>
-            <td><img class="shape" src="./img/circle.png" alt=""><img class="shape" src="./img/cross.png" alt=""></td>
-            <td><img class="shape" src="./img/circle.png" alt=""><img class="shape" src="./img/cross.png" alt=""></td>
+            <td onclick="placeMove(1, 0)" id="r1c0"></td>
+            <td onclick="placeMove(1, 1)" id="r1c1"></td>
+            <td onclick="placeMove(1, 2)" id="r1c2"><img class="shape d-none" src="./img/circle.png" alt=""><img class="shape d-none" src="./img/cross.png" alt=""></td>
         </tr>
         <tr>
-            <td><img class="shape" src="./img/circle.png" alt=""><img class="shape" src="./img/cross.png" alt=""></td>
-            <td><img class="shape" src="./img/circle.png" alt=""><img class="shape" src="./img/cross.png" alt=""></td>
-            <td><img class="shape" src="./img/circle.png" alt=""><img class="shape" src="./img/cross.png" alt=""></td>
+            <td onclick="placeMove(2, 0)" id="r2c0"></td>
+            <td onclick="placeMove(2, 1)" id="r2c1"></td>
+            <td onclick="placeMove(2, 2)" id="r2c2"></td>
         </tr>
-    </table>
+    </table><br>
+
+    <span>it's your turn @ </span>
+    <span id="actual-player"></span><br><br>
+    <span>the winner is</span>
+    <span id="winner" >...........</span><br><br>
+    <button onclick="resetAll()">new game</button>
     
 </body>
 </html>
