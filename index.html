@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,25 +18,32 @@
         <tr>
             <td onclick="placeMove(0, 0)" id="r0c0"></td>
             <td onclick="placeMove(0, 1)" id="r0c1"></td>
-            <td onclick="placeMove(0, 2)" id="r0c2"><img class="shape d-none" src="./img/circle.png" alt=""><img class="shape d-none" src="./img/cross.png" alt=""></td>
+            <td onclick="placeMove(0, 2)" id="r0c2"></td>
         </tr>
         <tr>
             <td onclick="placeMove(1, 0)" id="r1c0"></td>
             <td onclick="placeMove(1, 1)" id="r1c1"></td>
-            <td onclick="placeMove(1, 2)" id="r1c2"><img class="shape d-none" src="./img/circle.png" alt=""><img class="shape d-none" src="./img/cross.png" alt=""></td>
+            <td onclick="placeMove(1, 2)" id="r1c2"></td>
         </tr>
         <tr>
             <td onclick="placeMove(2, 0)" id="r2c0"></td>
             <td onclick="placeMove(2, 1)" id="r2c1"></td>
             <td onclick="placeMove(2, 2)" id="r2c2"></td>
         </tr>
-    </table><br>
+    </table>
 
-    <span>it's your turn @ </span>
-    <span id="actual-player"></span><br><br>
-    <span id="winner-headline">the winner is:</span>
-    <span id="winner" >...........</span><br><br>
-    <button onclick="resetAll()">new game</button>
-    
+    <div class="info">
+        <div class="actual-player">
+            <span>it's your turn @ </span>
+            <div id="actual-player"></div>
+        </div>
+        <div class="winner-box" id="winner-box">
+            <span>the winner is:</span>
+            <span id="winner">...........</span><br><br>
+        </div>
+        <button onclick="resetAll()">new game</button>
+    </div>
+
 </body>
+
 </html>

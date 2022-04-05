@@ -8,7 +8,9 @@ let actualPlayer = 'cross';
 
 
 function init() {
-    document.getElementById('actual-player').innerHTML = actualPlayer;
+    document.getElementById('actual-player').innerHTML = `<img src="./img/${actualPlayer}.png"></img>`;
+    document.getElementById('winner').innerHTML = '';
+    document.getElementById('winner-box').classList.remove('show-winner');
 }
 
 
@@ -17,7 +19,7 @@ function placeMove(row, column) {
     setPlayerToArray(row, column);
     actualField.style.pointerEvents = 'none';
     draw();
-    document.getElementById('actual-player').innerHTML = actualPlayer;
+    document.getElementById('actual-player').innerHTML = `<img src="./img/${actualPlayer}.png"></img>`;
     checkWinner();
 }
 
@@ -81,7 +83,6 @@ function checkWinner() {
     else if (field[0][2] == field[1][1] && field[0][2] == field[2][0]) {
         winner = field[0][2];
     }
-
     gameWinActions(winner);
 }
 
@@ -89,9 +90,8 @@ function checkWinner() {
 function gameWinActions(winner) {
     if (winner != undefined) {
         deactivateGame();
-        document.getElementById('winner').innerHTML = winner;
-        document.getElementById('winner-headline').classList.add('show-winner');
-        document.getElementById('winner').classList.add('show-winner');
+        document.getElementById('winner').innerHTML = `<img src="./img/${winner}.png"></img>`;
+        document.getElementById('winner-box').classList.add('show-winner');
         document.getElementById('actual-player').innerHTML = 'game-over';
     }
 }
@@ -116,7 +116,5 @@ function resetAll() {
             actualField.style.pointerEvents = 'auto';
         }
     }
-    document.getElementById('winner').innerHTML = '';
-    document.getElementById('winner-headline').classList.remove('show-winner');
-    document.getElementById('winner').classList.remove('show-winner');
+    init();
 }

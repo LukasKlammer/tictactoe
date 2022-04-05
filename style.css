@@ -1,3 +1,14 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    text-align: center;
+}
+
 tr {
     width: 399px;
 }
@@ -51,11 +62,63 @@ table tr td:last-child {
     display: none;
 }
 
-span {
-    font-size: large;
+.info {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 12px;
+}
+
+.info img {
+    width: 60px;
+}
+
+.actual-player {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    gap: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.winner-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    gap: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
 }
 
 .show-winner {
     font-size: xx-large;
-    background-color: yellow;
+    background-color: #FCB317;
+}
+
+.info button {
+    height: 32px;
+}
+
+@media (max-width: 450px) {
+    tr {
+        width: 240px;
+    }
+
+    table td {
+        width: 80px;
+        height: 80px;
+    }
+
+    .shape {
+        width: 50px;
+        height: 50px;
+        top: 16px;
+        left: 16px;
+    }
+
+    .info img {
+        width: 50px;
+    }
+
 }
