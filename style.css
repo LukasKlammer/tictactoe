@@ -50,3 +50,12 @@ table tr td:last-child {
 .d-none {
     display: none;
 }
+
+span {
+    font-size: large;
+}
+
+.show-winner {
+    font-size: xx-large;
+    background-color: yellow;
+}
