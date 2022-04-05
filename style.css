@@ -54,8 +54,8 @@ table tr td:last-child {
     position: absolute;
     width: 80px;
     height: 80px;
-    top: 26px;
-    left: 26px;
+    top: 27px;
+    left: 27px;
 }
 
 .d-none {
@@ -98,6 +98,26 @@ table tr td:last-child {
 
 .info button {
     height: 32px;
+}
+
+.horizontal-line{
+    height: 10px;
+    background-color: rgba(0,0,0, 0.5);
+    width: 375px;
+    position: absolute;
+    z-index: 1;
+}
+
+.make-vertical{
+    transform: rotate(90deg);
+}
+
+.spin-neg-45 {
+    transform: rotate(-45deg);
+}
+
+.spin-45 {
+    transform: rotate(45deg);
 }
 
 @media (max-width: 450px) {
