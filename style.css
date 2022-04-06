@@ -126,7 +126,7 @@ table tr td:last-child {
 }
 
 .overlay {
-    background-color: yellow;
+    background-color: #FCB317;
     z-index: 1;
     opacity: 0.5;
     animation: fadeIn 225ms ease-in-out;

@@ -59,31 +59,39 @@ function checkWinner() {
     // check rows
     if (field[0][0] == field[0][1] && field[0][0] == field[0][2]) {
         winner = field[0][0];
+        showWinnerLine('r0c0', 'r0c1', 'r0c2');
     }
     else if (field[1][0] == field[1][1] && field[1][0] == field[1][2]) {
         winner = field[1][0];
+        showWinnerLine('r1c0', 'r1c1', 'r1c2');
     }
     else if (field[2][0] == field[2][1] && field[2][0] == field[2][2]) {
         winner = field[2][0];
+        showWinnerLine('r2c0', 'r2c1', 'r2c2');
     }
 
     // check columns
     else if (field[0][0] == field[1][0] && field[0][0] == field[2][0]) {
         winner = field[0][0];
+        showWinnerLine('r0c0', 'r1c0', 'r2c0');
     }
     else if (field[0][1] == field[1][1] && field[0][1] == field[2][1]) {
         winner = field[0][1];
+        showWinnerLine('r0c1', 'r1c1', 'r2c1');
     }
     else if (field[0][2] == field[1][2] && field[0][2] == field[2][2]) {
         winner = field[0][2];
+        showWinnerLine('r0c2', 'r1c2', 'r2c2');
     }
 
     // check diagonal
     else if (field[0][0] == field[1][1] && field[0][0] == field[2][2]) {
         winner = field[0][0];
+        showWinnerLine('r0c0', 'r1c1', 'r2c2');
     }
     else if (field[0][2] == field[1][1] && field[0][2] == field[2][0]) {
         winner = field[0][2];
+        showWinnerLine('r0c2', 'r1c1', 'r2c0');
     }
     gameWinActions(winner);
 }
@@ -96,6 +104,13 @@ function gameWinActions(winner) {
         document.getElementById('winner-box').classList.add('show-winner');
         document.getElementById('actual-player').innerHTML = `<img class='game-over' src="./img/game_over.jpg"></img>`;
     }
+}
+
+
+function showWinnerLine(cell1, cell2, cell3) {
+    document.getElementById('overlay-' + cell1).classList.remove('d-none');
+    document.getElementById('overlay-' + cell2).classList.remove('d-none');
+    document.getElementById('overlay-' + cell3).classList.remove('d-none');
 }
 
 
