@@ -8,7 +8,7 @@ let actualPlayer = 'cross';
 
 
 function init() {
-    document.getElementById('actual-player').innerHTML = `<img src="./img/${actualPlayer}.png"></img>`;
+    document.getElementById('actual-player').innerHTML = `<span>it's your turn @ </span> <img class="info-image" src="./img/${actualPlayer}.png"></img>`;
     document.getElementById('winner').innerHTML = '';
     document.getElementById('winner-box').classList.remove('show-winner');
 }
@@ -19,7 +19,7 @@ function placeMove(row, column) {
     setPlayerToArray(row, column);
     actualField.style.pointerEvents = 'none';
     draw();
-    document.getElementById('actual-player').innerHTML = `<img src="./img/${actualPlayer}.png"></img>`;
+    document.getElementById('actual-player').innerHTML = `<span>it's your turn @ </span><img class="info-image" src="./img/${actualPlayer}.png"></img>`;
     checkWinner();
 }
 
@@ -90,9 +90,9 @@ function checkWinner() {
 function gameWinActions(winner) {
     if (winner != undefined) {
         deactivateGame();
-        document.getElementById('winner').innerHTML = `<img src="./img/${winner}.png"></img>`;
+        document.getElementById('winner').innerHTML = `<img class="info-image" src="./img/${winner}.png"></img>`;
         document.getElementById('winner-box').classList.add('show-winner');
-        document.getElementById('actual-player').innerHTML = 'game-over';
+        document.getElementById('actual-player').innerHTML = `<img class='game-over' src="./img/game_over.jpg"></img>`;
     }
 }
 
