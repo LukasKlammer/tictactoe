@@ -1,7 +1,7 @@
 let field = [
-    [0/0, 0/1, 0/2],
-    [1/0, 1/1, 1/2],
-    [2/0, 2/1, 2/2],
+    [0 / 0, 0 / 1, 0 / 2],
+    [1 / 0, 1 / 1, 1 / 2],
+    [2 / 0, 2 / 1, 2 / 2],
 ];
 
 let actualPlayer = 'cross';
@@ -38,13 +38,15 @@ function setPlayerToArray(row, column) {
 
 function draw() {
     for (let row = 0; row <= 2; row++) {
-        for(let column = 0; column <= 2; column++) {
+        for (let column = 0; column <= 2; column++) {
             let actualField = document.getElementById(`r${row}c${column}`);
             if (field[row][column] == 'cross') {
-                actualField.innerHTML = `<img class="shape" src="./img/cross.png"></img>`;
+                let sign = 'cross';
+                actualField.innerHTML = templateTableContent(row, column, sign);
             }
             else if (field[row][column] == 'circle') {
-                actualField.innerHTML = `<img class="shape" src="./img/circle.png"></img>`;
+                let sign = 'circle';
+                actualField.innerHTML = templateTableContent(row, column, sign);
             }
         }
     }
@@ -53,7 +55,7 @@ function draw() {
 
 function checkWinner() {
     let winner;
-    
+
     // check rows
     if (field[0][0] == field[0][1] && field[0][0] == field[0][2]) {
         winner = field[0][0];
@@ -99,7 +101,7 @@ function gameWinActions(winner) {
 
 function deactivateGame() {
     for (let row = 0; row <= 2; row++) {
-        for(let column = 0; column <= 2; column++) {
+        for (let column = 0; column <= 2; column++) {
             let actualField = document.getElementById(`r${row}c${column}`);
             actualField.style.pointerEvents = 'none';
         }
@@ -109,7 +111,7 @@ function deactivateGame() {
 
 function resetAll() {
     for (let row = 0; row <= 2; row++) {
-        for(let column = 0; column <= 2; column++) {
+        for (let column = 0; column <= 2; column++) {
             field[row][column] = `${row}/${column}`;
             let actualField = document.getElementById(`r${row}c${column}`);
             actualField.innerHTML = '';
