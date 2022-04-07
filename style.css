@@ -3,6 +3,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    font-family: 'Roboto', sans-serif;
 }
 
 h1 {
@@ -132,6 +133,10 @@ table tr td:last-child {
     animation: fadeIn 225ms ease-in-out;
     width: 100%;
     height: 100%;
+}
+
+.overlay-red {
+    background-color: #7D1713;
 }
 
 @keyframes fadeIn {

@@ -21,6 +21,7 @@ function placeMove(row, column) {
     draw();
     document.getElementById('actual-player').innerHTML = `<span>it's your turn @ </span><img class="info-image" src="./img/${actualPlayer}.png"></img>`;
     checkWinner();
+    undecided();
 }
 
 
@@ -107,6 +108,23 @@ function gameWinActions(winner) {
 }
 
 
+function undecided() {
+    if (document.getElementById('r0c0').innerHTML != ''
+        && document.getElementById('r0c1').innerHTML != ''
+        && document.getElementById('r0c2').innerHTML != ''
+        && document.getElementById('r1c0').innerHTML != ''
+        && document.getElementById('r1c1').innerHTML != ''
+        && document.getElementById('r1c2').innerHTML != ''
+        && document.getElementById('r2c0').innerHTML != ''
+        && document.getElementById('r2c1').innerHTML != ''
+        && document.getElementById('r2c2').innerHTML != ''
+        ) {
+            colorAsUndecided();
+            document.getElementById('actual-player').innerHTML = `<img class='game-over' src="./img/game_over.jpg"></img>`;
+    }
+}
+
+
 function showWinnerLine(cell1, cell2, cell3) {
     document.getElementById('overlay-' + cell1).classList.remove('d-none');
     document.getElementById('overlay-' + cell2).classList.remove('d-none');
@@ -119,6 +137,17 @@ function deactivateGame() {
         for (let column = 0; column <= 2; column++) {
             let actualField = document.getElementById(`r${row}c${column}`);
             actualField.style.pointerEvents = 'none';
+        }
+    }
+}
+
+
+function colorAsUndecided() {
+    for (let row = 0; row <= 2; row++) {
+        for (let column = 0; column <= 2; column++) {
+            let actualOverlay = document.getElementById(`overlay-r${row}c${column}`);
+            actualOverlay.classList.add('overlay-red');
+            actualOverlay.classList.remove('d-none');
         }
     }
 }
