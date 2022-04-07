@@ -20,8 +20,8 @@ function placeMove(row, column) {
     actualField.style.pointerEvents = 'none';
     draw();
     document.getElementById('actual-player').innerHTML = `<span>it's your turn @ </span><img class="info-image" src="./img/${actualPlayer}.png"></img>`;
-    checkWinner();
     undecided();
+    checkWinner();
 }
 
 
